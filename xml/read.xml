@@ -3,14 +3,14 @@
 	<entry> 
 		<Date>1/01/2001</Date> 
 		<ProductName>milk</ProductName> 
-		<Quantity>10</Quantitty> 
+		<Quantity>10</Quantity> 
 		<GrossPrice>50</GrossPrice> 
 		<Profit>10</Profit> 
 	</entry> 
 	<entry> 
 		<Date>2/10/2007</Date> 
 		<ProductName>milk</ProductName> 
-		<Quantity>20</Quantitty>
+		<Quantity>20</Quantity>
 		 <GrossPrice>100</GrossPrice> 
 		 <Profit>20</Profit> 
 		</entry> 
