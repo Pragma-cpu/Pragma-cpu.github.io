@@ -1,5 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript">
+    function loadXMLDoc(dname)
+    {
+        if (window.XMLHttpRequest)
+        {
+            xhttp=new XMLHttpRequest();
+        }
+        else
+        {
+            xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.open("GET",dname,false);
+        xhttp.send();
+        return xhttp.responseXML;
+    } 
+    function searchXML()
+    {
+        xmlDoc=loadXMLDoc("read.xml");
+        x=xmlDoc.getElementsByTagName("ProductName");
+        input = document.getElementById("input").value;
+        size = input.length;
+        if (input == null || input == "")
+        {
+            document.getElementById("results").innerHTML= "Please enter a Product Name!";
+            return false;
+        }
+        for (i=0;i<x.length;i++)
+        {
+            startString = ProductName.substring(0,size);
+            if (startString.toLowerCase() == input.toLowerCase())
+            {
+                date=xmlDoc.getElementsByTagName("Date")[i].childNodes[0].nodeValue;
+                product=xmlDoc.getElementsByTagName("ProductName")[i].childNodes[0].nodeValue;
+                quantity=xmlDoc.getElementsByTagName("Quantity")[i].childNodes[0].nodeValue;
+                grossprice=xmlDoc.getElementsByTagName("GrossPrice")[i].childNodes[0].nodeValue;
+                profit=xmlDoc.getElementsByTagName("Profit")[i].childNodes[0].nodeValue;
+                divText = "<h1>The contact details are:</h1><br /><table border=1><tr><th>Date</th><th>Product</th><th>Quantity</th><th>Gross Price</th><th>Profit</th></tr>" + "<tr><td>" + date + "</td><td>" + product + "</td><td>" + quantity + "</td><td>" + grossprice + "</td><td>" + profit + "</td></tr>" + "</table>";
+                break;
+            }
+            else
+            {
+                divText = "<h2>The product does not exist.</h2>";
+            }
+        }
+        document.getElementById("results").innerHTML= divText;
+    }
+</script>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -17,12 +65,11 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body id="page-top">
-        <!-- Navigation-->
+    <body id="page-top">add 
         <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#page-top">Start Bootstrap</a></li>
+                <li class="sidebar-brand"><a href="#page-top">FinSent</a></li>
                 <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
                 <li class="sidebar-nav-item"><a href="#about">About</a></li>
                 <li class="sidebar-nav-item"><a href="#services">Services</a></li>
@@ -34,8 +81,8 @@
         <header class="masthead d-flex align-items-center">
             <div class="container px-4 px-lg-5 text-center">
                 <h1 class="mb-1">FinSent </h1>
-                <h3 class="mb-5"><em>A Financial Data Labeling Platform</em></h3>
-                <a class="btn btn-primary btn-xl" href="#about">Start Labelling</a>
+                <h3 class="mb-5"><em>A Financial Data Labeling Platform for Sentiment Analysis</em></h3>
+                <a class="btn btn-primary btn-xl" href="#Task1">Start Labeling</a>
             </div>
         </header>
         <!-- About-->
@@ -47,6 +94,7 @@
                         <p class="lead mb-5">
                             This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
                             <a href="https://unsplash.com/">Unsplash</a>
+                            Product Name: <input type="text" name="ProductName" id="input"> <br /> <input type="submit" value="Submit" onClick="searchXML()"> <br /> <br /> <div id="results"> </div>
                             !
                         </p>
                         <a class="btn btn-dark btn-xl" href="#services">What We Offer</a>
