@@ -1,17 +1,15 @@
 <?xml version="1.0"?> 
 <item> 
 	<entry> 
-		<Date>1/01/2001</Date> 
-		<ProductName>milk</ProductName> 
-		<Quantity>10</Quantity> 
-		<GrossPrice>50</GrossPrice> 
-		<Profit>10</Profit> 
+		<Sequence>1</Sequence> 
+		<Text>TRENDING: New Yorkers encounter empty supermarket shelves (pictured, Wegmans in Brooklyn), sold-out ...</Text> 
 	</entry> 
 	<entry> 
-		<Date>2/10/2007</Date> 
-		<ProductName>milk</ProductName> 
-		<Quantity>20</Quantity>
-		 <GrossPrice>100</GrossPrice> 
-		 <Profit>20</Profit> 
-		</entry> 
+		<Sequence>2</Sequence> 
+		<Text>When I couldn't find hand sanitizer at Fred Meyer, I turned to #Amazon. But $114.97 for a 2 pack of ...</Text> 
+	</entry> 
+	<entry> 
+		<Sequence>3</Sequence> 
+		<Text>Find out how you can protect yourself and loved ones from #coronavirus. ?</Text> 
+	</entry> 
 	</item>

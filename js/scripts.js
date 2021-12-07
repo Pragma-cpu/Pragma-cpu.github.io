@@ -78,3 +78,41 @@ function fadeIn(el, display) {
         }
     })();
 };
+
+ function loadXMLDoc(dname)
+    {
+        if (window.XMLHttpRequest)
+        {
+            xhttp=new XMLHttpRequest();
+        }
+        else
+        {
+            xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.open("GET",dname,false);
+        xhttp.send();
+        return xhttp.responseXML;
+    } ;
+    function searchXML()
+    {
+        var xmlDoc = loadXMLDoc("xml/read.xml");
+        var x = xmlDoc.getElementsByTagName("Sequence");
+        //var x=3;
+            for (i = 0; i <= x; i++)
+            {
+
+                
+                    var date = xmlDoc.getElementsByTagName("Sequence")[i].childNodes[0].nodeValue;
+                    var product = xmlDoc.getElementsByTagName("Text")[i].childNodes[0].nodeValue;
+                    var divText = "TextL:" + product;
+                    break;
+                
+                            
+            
+
+            document.getElementById("results").innerHTML = divText;
+        }        
+    };
+  
+
+
