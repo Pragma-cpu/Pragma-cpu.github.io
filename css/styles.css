@@ -11863,10 +11863,11 @@ p {
   cursor: pointer;
 }
 .btn.likert-1 { background-color: darkgreen; color: yellow; }
-    .btn.likert-2 { background-color: lightgreen; color: brown; }
-    .btn.likert-3 { background-color: yellow; color: brown; }
-    .btn.likert-4 { background-color: orange; color: white; }
-    .btn.likert-5 { background-color: red; color: white; }
-    .btn.likert-6 { background-color: black; color: white; }
-    .btn.likert-7 { background-color: pink; color: maroon; }
-    .btn.likert-8 { background-color: white; color: gray; }
+.btn.likert-2 { background-color: lightgreen; color: brown; }
+.btn.likert-3 { background-color: yellow; color: brown; }
+.btn.likert-4 { background-color: orange; color: white; }
+.btn.likert-5 { background-color: red; color: white; }
+.btn.likert-6 { background-color: black; color: white; }
+.btn.likert-7 { background-color: pink; color: maroon; }
+.btn.likert-8 { background-color: white; color: gray; }
+.btn.likert-9 { background-color: white; color: gray; }
